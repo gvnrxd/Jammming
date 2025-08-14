@@ -1,0 +1,25 @@
+.playlistInput {
+  background-color: #1e1e1e;
+  border: 1px solid #5a5959;
+  border-radius: 25px;
+  width: 80%;
+  height: 3rem;
+  padding: 1rem;
+  display: flex;
+  justify-self: center;
+  color: white;
+}
+
+.playlistButton {
+  background-color: #1ed760;
+  margin: 0 auto;
+  display: flex;
+  width: 25%;
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: none;
+}

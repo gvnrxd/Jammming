@@ -1,9 +1,14 @@
+import styles from "./SearchBar.module.css";
 function SearchBar() {
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()}>
-        <input placeHolder="Enter Song, Artist name Here" type="text"></input>
-        <button>Search</button>
+        <input
+          className={styles.searchBar}
+          placeholder="Enter Song, Artist name Here"
+          type="text"
+        />
+        <button className={styles.searchButton}>Search</button>
       </form>
     </>
   );

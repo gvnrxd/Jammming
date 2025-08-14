@@ -5,10 +5,14 @@ import Playlist from "./components/Playlist";
 function App() {
   return (
     <>
-      <h1>Welcome To Jamming</h1>
+      <h1 className="Logo">
+        Jamming<span> playlist builder</span>
+      </h1>
       <SearchBar />
-      <SearchResults />
-      <Playlist />
+      <div className="contentContainer">
+        <SearchResults />
+        <Playlist />
+      </div>
     </>
   );
 }
