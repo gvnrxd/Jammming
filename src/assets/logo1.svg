@@ -1,0 +1,15 @@
+<svg width="128" height="128" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Jamming – playlist builder</title>
+  <!-- Rounded card / playlist container -->
+  <rect x="6" y="6" width="52" height="52" rx="10" stroke="currentColor" stroke-width="2.5"/>
+  <!-- Playlist lines -->
+  <line x1="16" y1="22" x2="36" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="16" y1="30" x2="32" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="16" y1="38" x2="28" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Music note -->
+  <path d="M40 20v14.5a4.5 4.5 0 1 1-2.5-4.04V20h2.5z" fill="currentColor"/>
+  <circle cx="35.5" cy="38.5" r="3.5" fill="currentColor"/>
+  <!-- Add (+) badge -->
+  <circle cx="48" cy="44" r="8" fill="currentColor" opacity="0.12"/>
+  <path d="M48 39v10M43 44h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
