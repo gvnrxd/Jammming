@@ -34,7 +34,7 @@ const STORAGE = {
 export async function startAuth() {
   // 3a. Create + store verifier
   const codeVerifier = generateRandomString(64);
-  localStorage.setItem(STORAGE.verifier, codeVerifier);
+  sessionStorage.setItem(STORAGE.verifier, codeVerifier);
 
   // 3b. Create challenge from verifier
   const hashed = await sha256(codeVerifier);
@@ -58,7 +58,7 @@ export async function startAuth() {
 
 // ----- 4) Token exchange -----
 export async function exchangeCodeForToken(code) {
-  const codeVerifier = localStorage.getItem(STORAGE.verifier);
+  const codeVerifier = sessionStorage.getItem(STORAGE.verifier);
   if (!codeVerifier) throw new Error("Missing PKCE code_verifier");
 
   const res = await fetch("https://accounts.spotify.com/api/token", {
@@ -81,8 +81,8 @@ export async function exchangeCodeForToken(code) {
   }
 
   const data = await res.json();
-  localStorage.setItem(STORAGE.accessToken, data.access_token);
-  localStorage.removeItem(STORAGE.verifier); // verifier no longer needed
+  sessionStorage.setItem(STORAGE.accessToken, data.access_token);
+  sessionStorage.removeItem(STORAGE.verifier); // verifier no longer needed
 
   // Clean "?code=..." from URL so refreshes are safe
   window.history.replaceState({}, "", window.location.pathname);
@@ -92,7 +92,7 @@ export async function exchangeCodeForToken(code) {
 
 // ----- 5) Convenience helpers -----
 export function getStoredToken() {
-  return localStorage.getItem(STORAGE.accessToken);
+  return sessionStorage.getItem(STORAGE.accessToken);
 }
 
 export async function handleRedirectIfPresent() {

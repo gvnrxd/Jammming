@@ -3,10 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
+body,
+html {
   width: 100%;
   height: 100%;
+}
+
+body {
   background-color: #121212;
   color: #b3b3b3;
 }
@@ -52,4 +55,8 @@ h2 {
 
 ::placeholder {
   color: grey;
+}
+
+.permissionBox {
+  background-color: green;
 }

@@ -1,0 +1,52 @@
+.permsBox {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 100;
+  height: 100vh;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+}
+
+.contentBox {
+  width: 80%;
+  justify-items: center;
+  align-content: center;
+  padding: 1rem;
+  background-color: rgb(56, 57, 56);
+  border-radius: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.contentBox li {
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.contentBox ul {
+  margin: 1rem;
+  list-style-type: disc;
+}
+
+.contentBox button {
+  background-color: #1ed760;
+  align-self: center;
+  border-radius: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1rem;
+  margin: 0.5rem;
+  word-wrap: none;
+}
+
+.contentBox button:hover {
+  background-color: #1ed75fcd;
+}
+
+.contentBox button:active {
+  transform: scale(0.97);
+}
