@@ -1,21 +1,43 @@
 import styles from "./Playlist.module.css";
-function Playlist() {
+
+export default function Playlist({ tracks, onRemove }) {
   return (
-    <>
-      <div className="panelContainer">
-        <h2>Playlist</h2>
-        <input
-          placeholder="Playlist name"
-          className={styles.playlistInput}
-        ></input>
-        <ul>
-          <li>Song 1</li>
-          <li>Song 2</li>
-          <li>Song 3</li>
-        </ul>
-        <button className={styles.playlistButton}>Save to Spotify</button>
-      </div>
-    </>
+    <section className={styles.section}>
+      <h2 className={styles.heading}>Playlist</h2>
+
+      {tracks.length === 0 ? (
+        <p className={styles.muted}>Add songs with the + button.</p>
+      ) : (
+        <div className={styles.grid}>
+          {tracks.map((t) => (
+            <article className={styles.card} key={t.id}>
+              {t.album?.images?.[2]?.url && (
+                <img
+                  className={styles.cover}
+                  src={t.album.images[2].url}
+                  alt=""
+                />
+              )}
+
+              <div className={styles.meta}>
+                <div className={styles.title}>{t.name}</div>
+                <div className={styles.sub}>
+                  {t.artists.map((a) => a.name).join(", ")}
+                </div>
+              </div>
+
+              <button
+                className={styles.removeBtn}
+                onClick={() => onRemove(t.id)}
+                aria-label={`Remove ${t.name}`}
+                title="Remove"
+              >
+                ×
+              </button>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
   );
 }
-export default Playlist;

@@ -1,4 +1,60 @@
-.searchTip {
-  color: grey;
-  font-size: 0.8rem;
+.heading {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  color: #e8e8e8;
+}
+
+/* Responsive grid for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+/* Card look */
+.card {
+  background: #1a1b20; /* matches your dark panel */
+  border-radius: 14px;
+  padding: 10px 12px;
+
+  display: grid;
+  grid-template-columns: 56px 1fr; /* cover | text */
+  gap: 12px;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
+  transform: translateY(-1px);
+}
+
+.cover {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.meta {
+  min-width: 0;
+}
+
+.title {
+  color: #e8e8e8;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sub {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

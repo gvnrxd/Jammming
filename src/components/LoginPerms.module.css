@@ -1,23 +1,24 @@
 .permsBox {
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-self: center;
   width: 100;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   padding: 2rem;
   color: white;
 }
 
 .contentBox {
-  width: 80%;
+  width: clamp(35rem, 50vw, 50rem);
   justify-items: center;
   align-content: center;
-  padding: 1rem;
-  background-color: rgb(56, 57, 56);
+  padding: 2rem 5rem;
+  background-color: #18191e;
   border-radius: 15px;
   font-size: 1.5rem;
   text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .contentBox li {
@@ -34,7 +35,7 @@
 .contentBox button {
   background-color: #1ed760;
   align-self: center;
-  border-radius: 20px;
+  border-radius: 50px;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -49,4 +50,84 @@
 
 .contentBox button:active {
   transform: scale(0.97);
+}
+
+.permsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.spotifyLogo {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+}
+
+.subText {
+  color: lightgray;
+  font-weight: 100;
+  padding: 0.5rem;
+}
+
+.subHeader {
+  font-weight: bold;
+}
+.disclosure {
+  background: #121417;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+.disclosure summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e6e6e6;
+  font-weight: 600;
+}
+.disclosure summary::-webkit-details-marker {
+  display: none;
+}
+.disclosure summary::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #b3b3b3;
+  border-bottom: 2px solid #b3b3b3;
+  transform: rotate(-45deg);
+  transition: transform 0.2s;
+}
+.disclosure[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.disclosure-panel {
+  margin-top: 0.5rem;
+  color: #b3b3b3;
+}
+.disclosure-panel h4 {
+  margin: 0.75rem 0 0.25rem;
+  color: #e6e6e6;
+}
+.disclosure-panel ul {
+  margin: 0.25rem 0 0.5rem 1.25rem;
+}
+.disclosure-panel li {
+  margin: 0.25rem 0;
+}
+.disclosure-panel code {
+  background: #0f1215;
+  padding: 0.05rem 0.35rem;
+  border-radius: 6px;
+  font-size: 0.85em;
+  color: #cfd3d8;
+}
+.disclosure-note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #9aa0a6;
 }

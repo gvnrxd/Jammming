@@ -1,17 +1,25 @@
-import styles from "./SearchBar.module.css";
-function SearchBar() {
+import { useState } from "react";
+
+export default function SearchBar({ onSearch, loading }) {
+  const [q, setQ] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onSearch(q);
+  }
+
   return (
-    <>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <input
-          className={styles.searchBar}
-          placeholder="Enter Song, Artist name Here"
-          type="text"
-        />
-        <button className={styles.searchButton}>Search</button>
-      </form>
-    </>
+    <form onSubmit={handleSubmit} className="searchForm">
+      <input
+        type="search"
+        placeholder="Search songs or artists"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        autoComplete="off"
+      />
+      <button type="submit" disabled={loading || !q.trim()}>
+        {loading ? "Searching…" : "Search"}
+      </button>
+    </form>
   );
 }
-
-export default SearchBar;

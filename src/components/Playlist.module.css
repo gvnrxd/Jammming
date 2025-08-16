@@ -1,25 +1,80 @@
-.playlistInput {
-  background-color: #1e1e1e;
-  border: 1px solid #5a5959;
-  border-radius: 25px;
-  width: 80%;
-  height: 3rem;
-  padding: 1rem;
-  display: flex;
-  justify-self: center;
-  color: white;
+.section {
 }
 
-.playlistButton {
-  background-color: #1ed760;
-  margin: 0 auto;
-  display: flex;
-  width: 25%;
-  height: 5vh;
-  justify-content: center;
+.heading {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  color: #e8e8e8;
+}
+
+.muted {
+  color: #b3b3b3;
+}
+
+/* Single column stack inside the right panel */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* keep stacked; switch to auto-fit for multi-col */
+  gap: 12px;
+}
+
+/* Same card look as SearchResults */
+.card {
+  background: #1a1b20;
+  border-radius: 14px;
+  padding: 10px 12px;
+
+  display: grid;
+  grid-template-columns: 56px 1fr auto; /* cover | text | remove */
   align-items: center;
-  border-radius: 15px;
+  gap: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
+  transform: translateY(-1px);
+}
+
+.cover {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.meta {
+  min-width: 0;
+}
+.title {
+  color: #e8e8e8;
+  font-weight: 600;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  word-wrap: none;
+}
+.sub {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.removeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #e6e6e6;
+  font-size: 18px;
+  line-height: 0;
+  cursor: pointer;
+}
+.removeBtn:hover {
+  border-color: rgba(255, 255, 255, 0.35);
 }
