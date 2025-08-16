@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="512" height="512" role="img" aria-label="Head with Headphones">
+  <defs>
+    <!-- Interior gradient (yellow to pink, bottom fade) -->
+    <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE64D"/>
+      <stop offset="100%" stop-color="#F39BCB"/>
+    </linearGradient>
+
+    <!-- Stroke gradient (purple to magenta like Vite) -->
+    <linearGradient id="strokeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#D946EF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Head silhouette (simple profile) -->
+  <path id="head"
+        d="M56 236
+           V108
+           Q56 64 88 64
+           H168
+           Q200 64 200 96
+           V160
+           Q200 192 168 192
+           H132
+           V236
+           Z"
+        fill="url(#fillGrad)"
+        stroke="url(#strokeGrad)"
+        stroke-width="18"
+        stroke-linejoin="round"/>
+
+  <!-- Headphone band (vertical bar on top-left) -->
+  <rect x="148" y="64" width="20" height="72" rx="8" ry="8" fill="url(#strokeGrad)"/>
+
+  <!-- Outer earcup ring -->
+  <circle cx="160" cy="132" r="38" fill="none" stroke="url(#strokeGrad)" stroke-width="18"/>
+
+  <!-- Optional inner ear pad ring -->
+  <circle cx="160" cy="132" r="20" fill="none" stroke="url(#strokeGrad)" stroke-width="8"/>
+</svg>
