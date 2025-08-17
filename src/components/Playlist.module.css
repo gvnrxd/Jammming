@@ -1,6 +1,3 @@
-.section {
-}
-
 .heading {
   margin: 0 0 0.75rem 0;
   font-size: clamp(1rem, 1.2vw, 1.25rem);
@@ -77,4 +74,9 @@
 }
 .removeBtn:hover {
   border-color: rgba(255, 255, 255, 0.35);
+}
+
+.section {
+  border-right: 1px solid grey;
+  padding-right: 1rem;
 }

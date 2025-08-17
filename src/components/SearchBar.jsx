@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./SearchBar.module.css";
 
 export default function SearchBar({ onSearch, loading }) {
   const [q, setQ] = useState("");
@@ -9,15 +10,20 @@ export default function SearchBar({ onSearch, loading }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="searchForm">
+    <form onSubmit={handleSubmit}>
       <input
         type="search"
         placeholder="Search songs or artists"
         value={q}
         onChange={(e) => setQ(e.target.value)}
         autoComplete="off"
+        className={styles.searchBar}
       />
-      <button type="submit" disabled={loading || !q.trim()}>
+      <button
+        className={styles.searchButton}
+        type="submit"
+        disabled={loading || !q.trim()}
+      >
         {loading ? "Searching…" : "Search"}
       </button>
     </form>

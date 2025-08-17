@@ -5,6 +5,7 @@ export default function SearchResults({ results, onAdd }) {
 
   return (
     <section className={styles.section}>
+      <h2 className={styles.heading}>Search Results</h2>
       {tracks.length > 0 && (
         <div className={styles.grid}>
           {tracks.map((t) => (
@@ -13,7 +14,7 @@ export default function SearchResults({ results, onAdd }) {
                 <img
                   className={styles.cover}
                   src={t.album.images[2].url}
-                  alt=""
+                  alt={`Song cover for ${t.name}`}
                 />
               )}
               <div className={styles.meta}>

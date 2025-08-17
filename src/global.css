@@ -14,6 +14,7 @@ html {
 body {
   background-color: #090b0e;
   color: #b3b3b3;
+  padding: 1rem 2rem;
 }
 
 ul {
@@ -28,8 +29,8 @@ h2 {
 
 .contentContainer {
   display: grid;
-  grid-template-columns: 360px 1fr; /* left list + right playlist panel */
-  gap: 2rem;
+  grid-template-columns: 360px 1fr 1fr; /* left list + right playlist panel */
+  gap: 1rem;
 }
 
 .panelContainer {
@@ -46,7 +47,6 @@ h2 {
   background-color: #1e1e1e;
   border-radius: 20px;
   height: 8rem;
-  margin: 1rem;
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -59,4 +59,8 @@ h2 {
 
 .permissionBox {
   background-color: green;
+}
+
+#root {
+  padding-bottom: 5rem;
 }

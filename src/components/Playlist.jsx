@@ -3,7 +3,7 @@ import styles from "./Playlist.module.css";
 export default function Playlist({ tracks, onRemove }) {
   return (
     <section className={styles.section}>
-      <h2 className={styles.heading}>Playlist</h2>
+      <h2 className={styles.heading}>New Playlist</h2>
 
       {tracks.length === 0 ? (
         <p className={styles.muted}>Add songs with the + button.</p>

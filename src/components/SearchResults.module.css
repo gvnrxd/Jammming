@@ -58,3 +58,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.section {
+  border-right: 1px solid grey;
+  padding-right: 1rem;
+}

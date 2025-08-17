@@ -4,6 +4,7 @@ import SearchResults from "./components/SearchResults";
 import Playlist from "./components/Playlist";
 import PreLogin from "./components/PreLogin";
 import LoginPerms from "./components/LoginPerms";
+import SubmitPlaylist from "./components/SubmitPlaylist";
 import {
   handleRedirectIfPresent,
   getStoredToken,
@@ -67,7 +68,7 @@ export default function App() {
     const params = new URLSearchParams({
       q,
       type: "track,artist", // change to "track" if you only want tracks
-      limit: "12",
+      limit: "12", // change to increase decrease amount returned
     });
 
     // cancel previous request
@@ -136,6 +137,7 @@ export default function App() {
       <div className="contentContainer">
         <SearchResults results={results} onAdd={addToPlaylist} />
         <Playlist tracks={playlist} onRemove={removeFromPlaylist} />
+        <SubmitPlaylist />
       </div>
     </>
   );
