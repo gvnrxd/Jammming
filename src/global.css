@@ -1,46 +1,80 @@
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body,
-html {
-  width: 100%;
+html,
+body {
   height: 100%;
+}
+html {
   scroll-behavior: smooth;
 }
 
 body {
   background-color: #090b0e;
   color: #b3b3b3;
+  /* optional: move padding to .App if you want the background to truly hit the edges */
   padding: 1rem 2rem;
 }
 
 ul {
-  text-decoration: none;
-  list-style-type: none;
+  list-style: none;
 }
-
 h1,
 h2 {
-  color: #ffffff;
+  color: #fff;
+}
+::placeholder {
+  color: grey;
+}
+.logOutButton {
+  width: clamp(20px, 5rem, 200px);
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 25px;
+}
+/* Root layout */
+#root {
+  min-height: 100dvh; /* fill viewport (better on mobile than 100vh) */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
 }
 
+/* Page wrapper that fills the remaining height */
+.App {
+  flex: 1; /* <— key: lets children stretch vertically */
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* avoid overflow issues with nested flex/grid */
+}
+
+/* Main two/three-column area that should stretch */
 .contentContainer {
+  flex: 1; /* <— lets it take vertical space */
   display: grid;
-  grid-template-columns: 360px 1fr 1fr; /* left list + right playlist panel */
+  grid-template-columns: 360px minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: 1fr; /* <— row has fixed height */
+  align-items: stretch; /* <— children become full height */
   gap: 1rem;
+  min-height: 0;
 }
 
+/* Example panel styling (optional) */
 .panelContainer {
   background-color: #181818;
-  width: 45%;
-  height: 75vh;
   border: 1px solid #5a5959;
   border-radius: 20px;
   padding: 1rem 1.5rem;
   font-size: 1.2rem;
+
+  /* If you want it to be scrollable inside the grid area: */
+  min-height: 0;
+  overflow: auto;
 }
 
 .panelContainer li {
@@ -53,14 +87,12 @@ h2 {
   position: relative;
 }
 
-::placeholder {
-  color: grey;
-}
-
+/* Misc */
 .permissionBox {
   background-color: green;
 }
 
-#root {
-  padding-bottom: 5rem;
+.logOutBar {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,10 +1,14 @@
 function PreLogin({ userProfile, onLogout }) {
   return (
     <>
-      {userProfile
-        ? `Connected as ${userProfile.display_name} ! Ready to search`
-        : `Connecting...`}
-      <button onClick={onLogout}>Logout</button>
+      <div className={"logOutBar"}>
+        {userProfile
+          ? `Connected as ${userProfile.display_name} | Ready to search`
+          : `Connecting...`}
+        <button onClick={onLogout} className={"logOutButton"}>
+          Logout
+        </button>
+      </div>
     </>
   );
 }
