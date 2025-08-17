@@ -5,8 +5,8 @@
   "type": "module",
   "homepage": "https://gvnrxd.github.io/Jammming/",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+     "predeploy": "vite build && copy dist\\index.html dist\\404.html",
+    "deploy": "gh-pages -d dist -r https://github.com/gvnrxd/Jammming.git",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
