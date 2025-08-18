@@ -11,7 +11,9 @@
 
 .nameInput {
   width: 100%;
-  background: #1e1e1e;
+  padding: 1re;
+  background: #1e1e24;
+  font-size: 2rem;
   border: 1px solid #5a5959;
   border-radius: 12px;
   padding: 0.65rem 0.8rem;
@@ -22,9 +24,11 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+
 .helperText {
   color: #9aa0a6;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  width: 70%;
   text-align: center;
 }
 
@@ -47,4 +51,23 @@
 }
 .nameInput[aria-invalid="true"] {
   border-color: #ff6b6b;
+}
+
+.submitButton {
+  background-color: #1db954;
+  border-radius: 20px;
+  padding: 0 1.25rem;
+  height: 5vh;
+  margin-left: 0.5rem;
+  color: black;
+}
+
+.submitButton:hover {
+  background-color: #1ed760;
+  color: white;
+  transition: all 0.1s ease;
+}
+
+.submitButton:active {
+  transform: scale(0.97);
 }

@@ -1,43 +1,36 @@
-form {
+.searchForm {
   margin: 2rem;
   display: flex;
   justify-self: center;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 50%;
-}
-
-.searchForm {
-  display: flex;
-  align-items: center;
-  background-color: #1e1e1e;
-  border-radius: 30px;
-  padding: 0.25rem;
-  width: 50%;
+  width: 100%;
 }
 
 .searchBar {
-  flex: 1;
   height: 3rem;
   border: none;
+  height: 8vh;
+  width: 50%;
   border-radius: 25px;
-  background: transparent;
+  background: #1e1e24;
   color: white;
   padding: 0 1rem;
   border: 1px solid #5a5959;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 2rem;
   color: white;
 }
 
 .searchButton {
-  background-color: #17a348;
+  background-color: #1db954;
   border-radius: 20px;
   padding: 0 1.25rem;
-  height: 2.5rem;
+  height: 5vh;
   margin-left: 0.5rem;
-  color: green;
+  color: black;
 }
 
 .searchButton:hover {

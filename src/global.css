@@ -26,17 +26,27 @@ ul {
 h1,
 h2 {
   color: #fff;
+  font-size: 2rem;
 }
 ::placeholder {
   color: grey;
 }
 .logOutButton {
-  width: clamp(20px, 5rem, 200px);
+  height: 2rem;
+  font-size: 1.5rem;
+  padding: 1rem;
   display: inline-flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   border-radius: 25px;
+  cursor: pointer;
 }
+
+.logOutButton:active {
+  transform: scale(0.97);
+}
+
 /* Root layout */
 #root {
   min-height: 100dvh; /* fill viewport (better on mobile than 100vh) */
@@ -51,6 +61,7 @@ h2 {
   display: flex;
   flex-direction: column;
   min-height: 0; /* avoid overflow issues with nested flex/grid */
+  width: 100%vw;
 }
 
 /* Main two/three-column area that should stretch */
@@ -62,29 +73,11 @@ h2 {
   align-items: stretch; /* <— children become full height */
   gap: 1rem;
   min-height: 0;
-}
-
-/* Example panel styling (optional) */
-.panelContainer {
-  background-color: #181818;
-  border: 1px solid #5a5959;
-  border-radius: 20px;
-  padding: 1rem 1.5rem;
-  font-size: 1.2rem;
-
-  /* If you want it to be scrollable inside the grid area: */
-  min-height: 0;
-  overflow: auto;
-}
-
-.panelContainer li {
-  background-color: #1e1e1e;
-  border-radius: 20px;
-  height: 8rem;
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
+  padding: 1rem 2rem;
+  background-color: #19191a;
+  margin: 0 2rem;
+  border-radius: 25px;
+  border: 1px solid white;
 }
 
 /* Misc */
@@ -95,4 +88,6 @@ h2 {
 .logOutBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 2rem;
 }

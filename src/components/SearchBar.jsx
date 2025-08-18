@@ -10,7 +10,7 @@ export default function SearchBar({ onSearch, loading }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.searchForm}>
       <input
         type="search"
         placeholder="Search songs or artists"
